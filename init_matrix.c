@@ -12,14 +12,10 @@
 
 #include "include.h"
 
-static void	x_filling(char **argv);
-static char	**create_matrix(void);
+static void	x_filling(char matrix[6][6]);
 
-char	**init_matrix(char **argv)
+void	init_matrix(char **argv, char matrix[6][6])
 {
-	char	**matrix;
-
-	matrix = create_matrix();
 	matrix[0][1] = argv[1][0];
 	matrix[0][2] = argv[1][2];
 	matrix[0][3] = argv[1][4];
@@ -37,25 +33,9 @@ char	**init_matrix(char **argv)
 	matrix[3][5] = argv[1][28];
 	matrix[4][5] = argv[1][30];
 	x_filling(matrix);
-	return (matrix);
 }
 
-static char	**create_matrix(void)
-{
-	char	**matrix;
-
-	matrix = malloc(7 * sizeof(char *));
-	matrix[0] = malloc(6 * sizeof(char));
-	matrix[1] = malloc(6 * sizeof(char));
-	matrix[2] = malloc(6 * sizeof(char));
-	matrix[3] = malloc(6 * sizeof(char));
-	matrix[4] = malloc(6 * sizeof(char));
-	matrix[5] = malloc(6 * sizeof(char));
-	matrix[6] = NULL;
-	return (matrix);
-}
-
-static void	x_filling(char **matrix)
+static void	x_filling(char matrix[6][6])
 {
 	int	i;
 	int	j;

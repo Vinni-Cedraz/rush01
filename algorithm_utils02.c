@@ -12,7 +12,7 @@
 
 #include "include.h"
 
-int	set_point(char **matrix, int *current_point)
+int	set_point(char matrix[6][6], int *current_point)
 {
 	int			i;
 	int			j;
@@ -38,7 +38,7 @@ int	set_point(char **matrix, int *current_point)
 	return (0);
 }
 
-void	set_line_prefix(char **matrix, int *current_point, char *prefix)
+void	set_line_prefix(char matrix[6][6], int *current_point, char *prefix)
 {
 	int	i;
 	int	j;

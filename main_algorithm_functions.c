@@ -12,24 +12,22 @@
 
 #include "include.h"
 
-static int	col_function(char **matrix, char ***meta, int *curr, int prev);
-static int	line_function(char **matrix, char ***meta, int *curr, int prev);
-static void	del_last_col(char **matrix, int *curr);
-static void	del_last_line(char **matrix, int *curr);
+static int	col_function(char matrix[6][6], char ***meta, int *curr, int prev);
+static int	line_function(char matrix[6][6], char ***meta, int *curr, int prev);
+static void	del_last_col(char matrix[6][6], int *curr);
+static void	del_last_line(char matrix[6][6], int *curr);
 
-void	rush01_algorithm(char **matrix, char ***meta)
+void	rush01_algorithm(char matrix[6][6], char ***meta)
 {
 	int	current_point[2];
 
-	current_point[0] = 0;
-	current_point[1] = 0;
 	if (-1 == line_function(matrix, meta, current_point, 0))
 		error();
 	else
 		print_inner_matrix(matrix);
 }
 
-static void	del_last_line(char **matrix, int *curr)
+static void	del_last_line(char matrix[6][6], int *curr)
 {
 	int	i;
 	int	j;
@@ -44,7 +42,7 @@ static void	del_last_line(char **matrix, int *curr)
 		matrix[i][j++] = 'x';
 }
 
-static void	del_last_col(char **matrix, int *curr)
+static void	del_last_col(char matrix[6][6], int *curr)
 {
 	int	i;
 	int	j;
@@ -59,7 +57,7 @@ static void	del_last_col(char **matrix, int *curr)
 		matrix[i++][j] = 'x';
 }
 
-static int	line_function(char **matrix, char ***meta, int *curr, int prev)
+static int	line_function(char matrix[6][6], char ***meta, int *curr, int prev)
 {
 	int		line_pair[2];
 	char	*string;
@@ -87,7 +85,7 @@ static int	line_function(char **matrix, char ***meta, int *curr, int prev)
 	return (0);
 }
 
-static int	col_function(char **matrix, char ***meta, int *curr, int prev)
+static int	col_function(char matrix[6][6], char ***meta, int *curr, int prev)
 {
 	char	*string;
 	int		col_pair[2];

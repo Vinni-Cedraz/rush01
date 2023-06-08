@@ -28,7 +28,7 @@ int	check_prefix(char *s1, char *prefix)
 	return (1);
 }
 
-void	print_matrix(char **matrix, int width)
+void	print_matrix(char matrix[6][6], int width)
 {
 	int	i;
 	int	j;
@@ -50,7 +50,7 @@ void	print_matrix(char **matrix, int width)
 	}
 }
 
-void	print_inner_matrix(char **matrix)
+void	print_inner_matrix(char matrix[6][6])
 {
 	int	i;
 	int	j;

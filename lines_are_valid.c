@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	lines_are_valid(char **args)
+int	lines_are_valid(char matr[6][6])
 {
 	int	x;
 
 	x = 1;
 	while (x <= 4)
 	{
-		if (args[x][0] == '4' && args[x][5] >= '2')
+		if (matr[x][0] == '4' && matr[x][5] >= '2')
 			return (0);
-		if ((args[x][0] == '3' || args[x][0] == '2') && args[x][5] == '4')
+		if ((matr[x][0] == '3' || matr[x][0] == '2') && matr[x][5] == '4')
 			return (0);
-		if (args[x][0] == '1' && args[x][5] == '1')
+		if (matr[x][0] == '1' && matr[x][5] == '1')
 			return (0);
-		if (args[x][0] == '3' && args[x][5] == '3')
+		if (matr[x][0] == '3' && matr[x][5] == '3')
 			return (0);
 		x++;
 	}

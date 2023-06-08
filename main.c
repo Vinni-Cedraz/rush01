@@ -14,14 +14,14 @@
 
 int	main(int argc, char **argv)
 {
-	char	**borders_matrix;
+	char	borders_matrix[6][6];
 	char	***meta_matrix;
 
 	if (1 == argc)
 		return (1);
 	if (!input_is_valid(argv))
 		return (error());
-	borders_matrix = init_matrix(argv);
+	init_matrix(argv, borders_matrix);
 	if (!lines_are_valid(borders_matrix) || !cols_are_valid(borders_matrix))
 	{
 		free_matrix(borders_matrix);
@@ -30,5 +30,4 @@ int	main(int argc, char **argv)
 	meta_matrix = init_meta_matrix();
 	rush01_algorithm(borders_matrix, meta_matrix);
 	free_meta_matrix(meta_matrix);
-	free_matrix(borders_matrix);
 }

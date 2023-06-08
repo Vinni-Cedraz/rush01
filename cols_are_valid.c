@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	cols_are_valid(char **args)
+int	cols_are_valid(char matrx[6][6])
 {
 	int	x;
 
 	x = 1;
 	while (x <= 4)
 	{
-		if (args[0][x] == '4' && args[5][x] >= '2')
+		if (matrx[0][x] == '4' && matrx[5][x] >= '2')
 			return (0);
-		if ((args[0][x] == '3' || args[0][x] == '2') && args[5][x] == '4')
+		if ((matrx[0][x] == '3' || matrx[0][x] == '2') && matrx[5][x] == '4')
 			return (0);
-		if (args[0][x] == '1' && args[5][x] == '1')
+		if (matrx[0][x] == '1' && matrx[5][x] == '1')
 			return (0);
-		if (args[0][x] == '3' && args[5][x] == '3')
+		if (matrx[0][x] == '3' && matrx[5][x] == '3')
 			return (0);
 		x++;
 	}

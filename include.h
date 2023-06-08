@@ -27,10 +27,8 @@
 # define PREV 1
 
 int		error(void);
-int		cols_are_valid(char **args);
-int		lines_are_valid(char **args);
-int		lines_are_valid(char **args);
-char	**init_matrix(char **argv);
+int		cols_are_valid(char matrx[6][6]);
+int		lines_are_valid(char matrx[6][6]);
 void	putspaces(void);
 void	putspace(void);
 void	ft_putchar(char c);
@@ -45,21 +43,21 @@ char	**c_3xxxx2(void);
 char	**c_4xxxx1(void);
 char	**c_2xxxx1(void);
 char	***init_meta_matrix(void);
+void	init_matrix(char **argv, char matrix[6][6]);
 int		check_prefix(char *s1, char *prefix);
 char	*get_row_string(int pair[2], char ***meta, char *prefix, int prev);
 char	*get_col_string(int pair[2], char ***meta, char *prefix, int prev);
 void	free_meta_matrix(char ***meta);
-void	free_matrix(char **matrix);
-void	print_matrix(char **matrix, int width);
-void	rush01_algorithm(char **borders_matrix, char ***meta_matrix);
-void	print_matrix_fd(char **matrix, int width, int fd);
-void	set_col_prefix(char **matrix, int *current_point, char *prefix);
-void	set_line_pair(int *pair, char **matrix, int *current_point);
-void	set_col_pair(int *pair, char **matrix, int *current_point);
-void	fill_collumn(char **matrix, int *curr, char *string);
-void	fill_line(char **matrix, int *curr, char *string);
-int		set_point(char **matrix, int *current_point);
-void	set_line_prefix(char **matrix, int *current_point, char *prefix);
+void	free_matrix(char matrx[6][6]);
+void	rush01_algorithm(char matrix[6][6], char ***meta);
+void	print_matrix_fd(char matrix[6][6], int width, int fd);
+void	set_col_prefix(char matrix[6][6], int *current_point, char *prefix);
+void	set_line_pair(int *pair, char matrix[6][6], int *current_point);
+void	set_col_pair(int *pair, char matrix[6][6], int *current_point);
+void	fill_collumn(char matrix[6][6], int *curr, char *string);
+void	fill_line(char matrix[6][6], int *curr, char *string);
+int		set_point(char matrix[6][6], int *current_point);
+void	set_line_prefix(char matrix[6][6], int *current_point, char *prefix);
 void	ft_bzero(char str[], int size);
 
 char	*get_1xxxx2_row_string(char ***meta, char *prefix, int prev);
@@ -81,6 +79,7 @@ char	*get_2xxxx3_col_string(char ***meta, char *prefix, int prev);
 char	*get_3xxxx1_col_string(char ***meta, char *prefix, int prev);
 char	*get_3xxxx2_col_string(char ***meta, char *prefix, int prev);
 char	*get_4xxxx1_col_string(char ***meta, char *prefix, int prev);
-void	print_inner_matrix(char **matrix);
+void	print_inner_matrix(char matrix[6][6]);
+void	print_matrix(char matrix[6][6], int width);
 
 #endif

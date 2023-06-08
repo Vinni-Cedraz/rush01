@@ -12,7 +12,7 @@
 
 #include "include.h"
 
-void	set_col_prefix(char **matrix, int *current_point, char *prefix)
+void	set_col_prefix(char matrix[6][6], int *current_point, char *prefix)
 {
 	int	i;
 	int	j;
@@ -33,7 +33,7 @@ void	set_col_prefix(char **matrix, int *current_point, char *prefix)
 	prefix[k] = '\0';
 }
 
-void	set_line_pair(int *pair, char **matrix, int *current_point)
+void	set_line_pair(int *pair, char matrix[6][6], int *current_point)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ void	set_line_pair(int *pair, char **matrix, int *current_point)
 	pair[RIGHT] = matrix[i][5] - '0';
 }
 
-void	set_col_pair(int *pair, char **matrix, int *current_point)
+void	set_col_pair(int *pair, char matrix[6][6], int *current_point)
 {
 	int	j;
 
@@ -55,7 +55,7 @@ void	set_col_pair(int *pair, char **matrix, int *current_point)
 	pair[DOWN] = matrix[5][j] - '0';
 }
 
-void	fill_collumn(char **matrix, int *curr, char *string)
+void	fill_collumn(char matrix[6][6], int *curr, char *string)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ void	fill_collumn(char **matrix, int *curr, char *string)
 	}
 }
 
-void	fill_line(char **matrix, int *curr, char *string)
+void	fill_line(char matrix[6][6], int *curr, char *string)
 {
 	int	j;
 

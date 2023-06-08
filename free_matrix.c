@@ -22,7 +22,7 @@ void	free_meta_matrix(char ***meta_matrix)
 	free(meta_matrix);
 }
 
-void	free_matrix(char **matrix)
+void	free_matrix(char matrix[6][6])
 {
 	int	i;
 
