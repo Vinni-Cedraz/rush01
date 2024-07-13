@@ -1,29 +1,30 @@
-# 1 3 2 3 #
+# Rush01 Algorithm
+
++ 1 3 2 3 +
 1 x x x x 3
 2 x x x x 2
 3 x x x x 1
 2 x x x x 2
-# 3 1 3 2 #
++ 3 1 3 2 +
 
-instructions:
-(line function)
--> go to first 'x' (unfilled) position found (if not found, print matrix and exit)
--> set `char *prefix` with values found on the filled positions in the current line 
--> set pair left and right for current line
--> call get_line_string with corresponding arguments for left, right, prev and prefix
-***********-------------------------------------***********
--> if the returned string is not empty, fill the line with the returned string
-and call column function witout prev flag
--> if the returned string is empty, delete last column filled (except its prefix) and call column
-function with a prev flag
+The algorithm works by filling a matrix based on the constraints provided in the border of the matrix. The algorithm follows the steps outlined below:
 
-(column function)
--> go to first 'x' (unfilled) position found (if not found, print matrix and exit)
--> set `char *prefix` with values found on the filled positions in the current collumn
--> set pair up and down for current collumn
--> call get_col_string with corresponding arguments for up, down, prev and prefix
-***********--------------------------------------***********
--> if the returned string is not empty, fill the column with the returned string
-and call line function witout prev flag
--> if the returned string is empty, delete last line filled (except it's prefix) and call line 
-function with a prev flag
+## Line Function
+
+1. Go to the first 'x' (unfilled) position found. If not found, print the matrix and exit.
+2. Set `char *prefix` with values found on the filled positions in the current line.
+3. Set pair left and right for the current line.
+4. Call `get_line_string` with corresponding arguments for left, right, prev, and prefix.
+
+    - If the returned string is not empty, fill the line with the returned string and call the column function without the prev flag.
+    - If the returned string is empty, delete the last column filled (except its prefix) and call the column function with a prev flag.
+
+## Column Function
+
+1. Go to the first 'x' (unfilled) position found. If not found, print the matrix and exit.
+2. Set `char *prefix` with values found on the filled positions in the current column.
+3. Set pair up and down for the current column.
+4. Call `get_col_string` with corresponding arguments for up, down, prev, and prefix.
+
+    - If the returned string is not empty, fill the column with the returned string and call the line function without the prev flag.
+    - If the returned string is empty, delete the last line filled (except its prefix) and call the line function with a prev flag.
