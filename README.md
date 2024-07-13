@@ -1,11 +1,11 @@
 # Rush01 Algorithm
 
-+ 1 3 2 3 +
+% 1 3 2 3 %
 1 x x x x 3
 2 x x x x 2
 3 x x x x 1
 2 x x x x 2
-+ 3 1 3 2 +
+% 3 1 3 2 %
 
 The algorithm works by filling a matrix based on the constraints provided in the border of the matrix. The algorithm follows the steps outlined below:
 
